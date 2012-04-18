@@ -1,0 +1,10 @@
+[user]
+	name = Marin Atanasov Nikolov
+	email = dnaeon@gmail.com
+[core]
+	editor = emacsclient
+	pager = less
+[color]
+	ui = auto
+[merge]
+	tool = vimdiff
