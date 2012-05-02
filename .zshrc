@@ -32,6 +32,7 @@ zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
 zmodload -ap zsh/mapfile mapfile
 
+source ~/PROJECTS/zsh-git-prompt/zshrc.sh
 
 #
 # Environment variables
@@ -66,9 +67,9 @@ HOSTNAME="`hostname`"
 
 autoload -U colors && colors
 
-PROMPT="%n:%{$fg[yellow]%}(%~)%{$reset_color%}> "
+#PROMPT="%n:%{$fg[yellow]%}(%~)%{$reset_color%}> "
+PROMPT='%n:%{$fg[yellow]%}(%~)%b$(git_super_status) %# '
 RPROMPT=" <%{$bg[white]%}%{$fg[black]%}[%h][%T]%{$reset_color%}]"
-
 
 LC_ALL='en_US.UTF-8'
 LANG='en_US.UTF-8'
