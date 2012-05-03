@@ -100,6 +100,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias ll='ls -l'
 alias tagold='cvs rtag -F -r STABLE OLD_STABLE_$(date +%Y%m%d)'
+alias e='emacsclient'
 
 autoload -Uz compinit
 compinit
