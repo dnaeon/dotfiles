@@ -45,6 +45,14 @@
 (setq auto-mode-alist
   (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
+;; Set TRAMP mode
+
+(require 'tramp)
+(setq tramp-default-method "ssh")
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'zenburn t)
+
 ;; Pretty diff mode
 (autoload 'ediff-buffers "ediff" "Intelligent Emacs interface to diff" t)
 (autoload 'ediff-files "ediff" "Intelligent Emacs interface to diff" t)
@@ -78,7 +86,7 @@
     )
   )
 
-(require 'eldav)
+; (require 'eldav)
 
 (global-set-key [M-f1] 'font-lock-fontify-buffer)
 
@@ -208,14 +216,16 @@
 ;; All done
 (message "All done, %s%s" (user-login-name) ".")
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
+ '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
  '(show-paren-mode t))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Bitstream Vera Sans Mono" :foundry "bitstream" :slant normal :weight normal :height 92 :width normal)))))
