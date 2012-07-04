@@ -33,6 +33,7 @@ zmodload -a zsh/zprof zprof
 zmodload -ap zsh/mapfile mapfile
 
 source ~/PROJECTS/zsh-git-prompt/zshrc.sh
+source ~/PROJECTS/cfengine/masterfiles/files/scripts/git-helpers.source
 
 #
 # Environment variables
@@ -42,7 +43,7 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:~/bin
 EDITOR=emacsclient
 BLOCKSIZE=K
 PAGER=less
-TERM=rxvt
+#TERM=rxvt
 
 CVSROOT=:pserver:mra@cvs.tess.elex.be:/var/cvsit
 
