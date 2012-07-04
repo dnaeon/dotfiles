@@ -53,6 +53,26 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'zenburn t)
 
+;; Hide tool-bar and scroll-bar
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; Full screen mode
+(defun toggle-fullscreen (&optional f)
+  (interactive)
+  (let ((current-value (frame-parameter nil 'fullscreen)))
+    (set-frame-parameter nil 'fullscreen
+			 (if (equal 'fullboth current-value)
+			     (if (boundp 'old-fullscreen) old-fullscreen nil)
+			   (progn (setq old-fullscreen current-value)
+				  'fullboth)))))
+(global-set-key [f11] 'toggle-fullscreen)
+
+; Make new frames fullscreen by default. Note: this hook doesn't do
+; anything to the initial frame if it's in your .emacs, since that file is
+; read _after_ the initial frame is created.
+(add-hook 'after-make-frame-functions 'toggle-fullscreen)
+
 ;; Pretty diff mode
 (autoload 'ediff-buffers "ediff" "Intelligent Emacs interface to diff" t)
 (autoload 'ediff-files "ediff" "Intelligent Emacs interface to diff" t)
