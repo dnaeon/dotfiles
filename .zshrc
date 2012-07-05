@@ -33,7 +33,7 @@ zmodload -a zsh/zprof zprof
 zmodload -ap zsh/mapfile mapfile
 
 source ~/PROJECTS/zsh-git-prompt/zshrc.sh
-source ~/PROJECTS/cfengine/masterfiles/files/scripts/git-helpers.source
+source ~/PROJECTS/git-helpers/git-helpers.sh
 
 #
 # Environment variables
