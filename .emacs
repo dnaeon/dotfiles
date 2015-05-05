@@ -49,10 +49,20 @@
 
 (add-hook 'python-mode-hook 'electric-indent-mode)
 
+;; Hihglight current line
+(global-hl-line-mode 1)
+
+;; Column number mode
+(column-number-mode 1)
+
+;; Show the current function name in the header line
+(which-function-mode)
+
 ;; Under UNIX
 (server-start)
 
 (require 'fill-column-indicator)
+;;(setq fci-rule-column 79)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

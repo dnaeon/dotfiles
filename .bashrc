@@ -62,7 +62,8 @@ mnikolovs_virtualenv() {
     if [[ $VIRTUAL_ENV == *.virtualenvs/* ]]; then
       ENV_NAME=`basename "${VIRTUAL_ENV}"`
     else
-      folder=`dirname "${VIRTUAL_ENV}"`
+      #folder=`dirname "${VIRTUAL_ENV}"`
+      folder="${VIRTUAL_ENV}"
       ENV_NAME=`basename "$folder"`
     fi
     echo -n $' \033[37mworkon \033[35m'
@@ -131,6 +132,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Enable autoenv
+# https://github.com/kennethreitz/autoenv
+source ~/PROJECTS/autoenv/activate.sh
 
 alias ssh='ssh -2'
 alias rm='rm -i'
