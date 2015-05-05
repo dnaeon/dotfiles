@@ -4,7 +4,22 @@
 [core]
 	editor = emacsclient
 	pager = less
+	gitproxy = gitproxy
 [color]
 	ui = auto
 [merge]
 	tool = vimdiff
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = cyan bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
